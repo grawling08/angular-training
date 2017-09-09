@@ -3,6 +3,9 @@
     angular.module('starter',[
         'ui.router',
         'restangular',
-        'ui.bootstrap'
+        'ui.bootstrap',
+        'toastr',
+        'LocalStorageModule',
+        'ngDialog'
     ]);
 })();

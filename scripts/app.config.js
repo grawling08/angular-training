@@ -4,13 +4,14 @@
     angular.module('starter')
         .config(configuration);
     
-    configuration.$inject = ['$stateProvider','$urlRouterProvider','RestangularProvider','API_URL','API_VERSION'];
+    configuration.$inject = ['$stateProvider','$urlRouterProvider','RestangularProvider','API_URL','API_VERSION','$httpProvider'];
     
-    function configuration($stateProvider, $urlRouterProvider, RestangularProvider,API_URL,API_VERSION){
+    function configuration($stateProvider, $urlRouterProvider, RestangularProvider,API_URL,API_VERSION,$httpProvider){
         
         RestangularProvider.setBaseUrl(API_URL + API_VERSION);
+        $httpProvider.interceptors.push('httpInterceptor');
 
-        $urlRouterProvider.otherwise('/main/home');
+        $urlRouterProvider.otherwise('/login');
         $stateProvider
             .state('main',{
                 url: '/main',

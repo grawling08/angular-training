@@ -10,6 +10,7 @@ var runSeq = require('run-sequence');
 var paths = {
     styles: './styles/*.*',
     templates: './modules/*.*',
+    templates2: './modules/**/*.*',
     scripts: './scripts/*.*',
     index: 'index.html'
 };
@@ -47,7 +48,7 @@ gulp.task('serve', function(){
         }
     });
 
-    gulp.watch([paths.index,paths.styles,paths.scripts,paths.templates])
+    gulp.watch([paths.index,paths.styles,paths.scripts,paths.templates,paths.templates2])
         .on('change',browserSync.reload);
 });
 

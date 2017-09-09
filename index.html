@@ -5,28 +5,42 @@
 </head>
     <!-- build:css1 css/main.min.css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css" type="text/css">
+    <link href="bower_components/ng-dialog/css/ngDialog.min.css" rel="stylesheet">
+    <link href="bower_components/ng-dialog/css/ngDialog-theme-default.css" rel="stylesheet">
+    <link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.min.css" type="text/css">
     <link rel="stylesheet" href="styles/styles.css" type="text/css">
+    <link rel="stylesheet" href="modules/login/login.css" type="text/css">
     <!-- endbuild -->
 <body>
     <div ui-view></div>
 </body>
 <!-- build:js1 js/lib.min.js -->
 <script src="bower_components/lodash/dist/lodash.min.js"></script>
-
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/ng-dialog/js/ngDialog.js"></script>
 <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
 <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
 <script src="bower_components/restangular/dist/restangular.min.js"></script>
+<script src="bower_components/angular-toastr/dist/angular-toastr.tpls.min.js"></script>
+<script src="bower_components/angular-local-storage/dist/angular-local-storage.min.js"></script>
 <!-- endbuild -->
 <!-- build:js2 js/app.min.js -->
 <script src="scripts/app.js"></script>
 <script src="scripts/app.config.js"></script>
 <script src="scripts/app.run.js"></script>
 <script src="scripts/app.constant.js"></script>
+<script src="scripts/app.interceptor.js"></script>
 <!-- USERS -->
 <script src="modules/users/users.config.js"></script>
 <script src="modules/users/users.controller.js"></script>
 <script src="modules/users/user.controller.js"></script>
 <script src="modules/users/users.services.js"></script>
+<!-- LOGIN -->
+<script src="modules/login/login.config.js"></script>
+<script src="modules/login/login.controller.js"></script>
+<script src="modules/login/login.services.js"></script>
 <!-- endbuild -->
 </html>
