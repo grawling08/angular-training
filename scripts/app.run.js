@@ -28,7 +28,7 @@
         $rootScope.$on('unauthorized', function(){
             localStorageService.remove('user');
             localStorageService.remove('user.token');
-
+            console.log('unauthorized');
             $location.path('/login');
         });
 

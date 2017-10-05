@@ -1,0 +1,154 @@
+<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">Add New Vehicle</h3>
+</div>
+<div class="modal-body" id="modal-body">
+    <div class="container-fluid">
+        <form>
+        <uib-tabset active="activeForm">
+            <uib-tab index="0" heading="General Info">
+                <div class="form-group col-md-6" >
+                    <label for="vYear">Year</label>
+                    <input type="year" class="form-control" id="Year" ng-model="vehicle.year">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="vMake">Make</label>
+                    <input type="text" class="form-control" id="vMake" ng-model="vehicle.make">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="vModel">Model</label>
+                    <input type="text" class="form-control" id="vModel" ng-model="vehicle.model">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="vPlateno">Plate Number</label>
+                    <input type="text" class="form-control" id="vPlateno" ng-model="vehicle.plateno">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="vType">Type</label>
+                    <input type="text" class="form-control" id="vType" ng-model="vehicle.type">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="vDepartment">Department</label>
+                    <input type="text" class="form-control" id="vDepartment" ng-model="vehicle.department">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="vLocation">Location</label>
+                    <input type="text" class="form-control" id="vLocation" ng-model="vehicle.location">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="vDriver">Driver</label>
+                    <input type="text" class="form-control" id="vDriver" ng-model="vehicle.driver">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="vAssto">Assign To</label>
+                    <input type="text" class="form-control" id="vAssto" ng-model="vehicle.assto">
+                </div>
+                <div class="form-group col-md-6">
+                </div>
+            </uib-tab>
+            <uib-tab index="1" heading="Specification">
+                <div class="panel panel-default" style="margin-top: 10px;">
+                    <div class="panel-heading">Vehicle Identification</div>
+                    <div class="panel-body">
+                        <div class="form-group col-md-6" >
+                            <label for="vYear">Year</label>
+                            <input type="year" class="form-control" id="Year" ng-model="vehicle.year">
+                        </div>
+                        <div class="form-group col-md-6" >
+                            <label for="vYear">Year</label>
+                            <input type="year" class="form-control" id="Year" ng-model="vehicle.year">
+                        </div>
+                        <div class="form-group col-md-6" >
+                            <label for="vYear">Year</label>
+                            <input type="year" class="form-control" id="Year" ng-model="vehicle.year">
+                        </div>
+                        <div class="form-group col-md-6" >
+                            <label for="vYear">Year</label>
+                            <input type="year" class="form-control" id="Year" ng-model="vehicle.year">
+                        </div>
+                        <div class="form-group col-md-6" >
+                            <label for="vYear">Year</label>
+                            <input type="year" class="form-control" id="Year" ng-model="vehicle.year">
+                        </div>
+                        <div class="form-group col-md-6" >
+                            <label for="vYear">Year</label>
+                            <input type="year" class="form-control" id="Year" ng-model="vehicle.year">
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">Engine Transmission</div>
+                    <div class="panel-body">
+                        <div class="form-group col-md-6" >
+                            <label for="vYear">Year</label>
+                            <input type="year" class="form-control" id="Year" ng-model="vehicle.year">
+                        </div>
+                        <div class="form-group col-md-6" >
+                            <label for="vYear">Year</label>
+                            <input type="year" class="form-control" id="Year" ng-model="vehicle.year">
+                        </div>
+                        <div class="form-group col-md-6" >
+                            <label for="vYear">Year</label>
+                            <input type="year" class="form-control" id="Year" ng-model="vehicle.year">
+                        </div>
+                        <div class="form-group col-md-6" >
+                            <label for="vYear">Year</label>
+                            <input type="year" class="form-control" id="Year" ng-model="vehicle.year">
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">Miscellaneous</div>
+                    <div class="panel-body">
+                        <div class="form-group col-md-6" >
+                            <label for="vYear">Year</label>
+                            <input type="year" class="form-control" id="Year" ng-model="vehicle.year">
+                        </div>
+                        <div class="form-group col-md-6" >
+                            <label for="vYear">Year</label>
+                            <input type="year" class="form-control" id="Year" ng-model="vehicle.year">
+                        </div>
+                        <div class="form-group col-md-6" >
+                            <label for="vYear">Year</label>
+                            <input type="year" class="form-control" id="Year" ng-model="vehicle.year">
+                        </div>
+                    </div>
+                </div>
+            </uib-tab>
+            <uib-tab index="2" heading="Purchase Status" >
+                <div class="panel panel-default" style="margin-top: 10px;">
+                    <div class="panel-heading">Purchase Information</div>
+                    <div class="panel-body">
+                        Panel content
+                    </div>
+                </div>
+            </uib-tab>
+            <uib-tab index="3" heading="Registration" >
+                <div class="panel panel-default" style="margin-top: 10px;">
+                    <div class="panel-heading">Certificate of Registration (COR)</div>
+                    <div class="panel-body">
+                        Panel content
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">Official Reciept</div>
+                    <div class="panel-body">
+                        Panel content
+                    </div>
+                </div>
+            </uib-tab>
+            <uib-tab index="4" heading="Insurance" >
+                <div class="panel panel-default" style="margin-top: 10px;">
+                    <div class="panel-heading">Insurance</div>
+                    <div class="panel-body">
+                        Panel content
+                    </div>
+                </div>
+            </uib-tab>
+        </uib-tabset>   
+        </form>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-info" type="button" ng-click="saveEntryV()">Save</button>
+    <button class="btn btn-warning" type="button" ng-click="cancelV()">Cancel</button>
+</div>

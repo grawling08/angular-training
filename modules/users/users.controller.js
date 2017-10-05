@@ -12,7 +12,7 @@
         $scope.txtSearch = '';
 
         usersFactory.getAllUser().then(function (data) {
-            console.log("data:" + data);
+            //console.log("data:" + data);
             if (data.statusCode == 200 && data.response.success) {
                 var users = data.response.result;
                 console.log('users: ' + users);
