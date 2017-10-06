@@ -155,4 +155,9 @@
     margin: 0px;
     padding: 0px;
   }
-  
+
+  .fixed-panel {
+    min-height: 10;
+    max-height: 10;
+    overflow-y: scroll;
+  }

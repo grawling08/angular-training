@@ -4,9 +4,9 @@
     angular.module('starter')
         .controller('vehicleModalCtrl', vehicleModalCtrl);
 
-    vehicleModalCtrl.$inject = ['$scope', '$uibModalInstance', 'vehiclesFactory', 'v_id', 'toastr', '$timeout'];
+    vehicleModalCtrl.$inject = ['$scope', '$uibModalInstance', 'vehiclesFactory', 'v_id', 'toastr', '$timeout', '$filter'];
 
-    function vehicleModalCtrl($scope, $uibModalInstance, vehiclesFactory, v_id, toastr, $timeout) {
+    function vehicleModalCtrl($scope, $uibModalInstance, vehiclesFactory, v_id, toastr, $timeout, $filter) {
         $scope.vehicle = {};
 
         if (!_.isEmpty(v_id)) {
@@ -25,6 +25,8 @@
 
         $scope.saveEntryV = function () {
             if (_.isEmpty(v_id)) {
+                $scope.vehicle.datepurchased = $filter('date')($scope.vehicle.datepurchased, "yyyy-MM-dd");
+                console.log($scope.vehicle);
                 vehiclesFactory.saveVehicle($scope.vehicle).then(function (data) {
                     if (data.statusCode == 200 && data.response.success) {
                         toastr.success(data.response.msg, 'SUCCESS');
@@ -42,6 +44,7 @@
                     }
                 })
             } else {
+                $scope.vehicle.datepurchased = $filter('date')($scope.vehicle.datepurchased, "yyyy-MM-dd");
                 vehiclesFactory.updateVehicle(v_id, $scope.vehicle).then(function (data) {
                     if (data.statusCode == 200 && data.response.success) {
                         toastr.success(data.response.msg, 'SUCCESS');
@@ -65,7 +68,5 @@
         $scope.cancelV = function () {
             $uibModalInstance.dismiss('cancel');
         }
-
-
     }
 })();
