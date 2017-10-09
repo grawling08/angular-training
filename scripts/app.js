@@ -6,6 +6,9 @@
         'ui.bootstrap',
         'toastr',
         'LocalStorageModule',
-        'ngDialog'
+        'ngDialog',
+        'ui.bootstrap.datetimepicker',
+        'angular-loading-bar',
+        'cfp.loadingBar'
     ]);
 })();

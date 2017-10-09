@@ -13,6 +13,8 @@
     "angular-toastr": "^2.1.1",
     "angular-local-storage": "^0.7.1",
     "font-awesome": "fontawesome#^4.7.0",
-    "ng-dialog": "^1.4.0"
+    "ng-dialog": "^1.4.0",
+    "angular-ui-bootstrap-datetimepicker": "^2.5.1",
+    "angular-loading-bar": "^0.9.0"
   }
 }

@@ -1,11 +1,9 @@
 <div class="container-fluid" style="margin-top: 20px;">
     <div class="row">
-        <div class="col-lg-6 col-md-4 col-sm-4">
-            <a href="" id="" class="btn btn-default" ng-click="newEntryV()">New</a>
-            <a href="" id="" class="btn btn-default" ng-click="refreshV()">Refresh</a>
-        </div>
-        <div class="col-lg-6 col-md-8 col-sm-8">
+        <div class="col-lg-12 col-md-12 col-sm-12">
             <div class="input-group">
+                <span class="input-group-btn"><a href="" id="" class="btn btn-default" ng-click="newEntryV()">New</a></span>
+                <span class="input-group-btn"><a href="" id="" class="btn btn-default" ng-click="refreshV()">Refresh</a></span>
                 <input type="text" name="" class="form-control" id="" ng-model="txtSearch" ng-keypress="($event.which === 13)?searchV():0"
                     ng-change="(txtSearch.length < 1)?searchV():0">
                 <span class="input-group-btn">
@@ -15,7 +13,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-12  col-md-12 col-sm-12">
+        <!-- <div class="col-lg-12 col-md-6 col-sm-6">
             <table class="table">
                 <thead>
                     <tr>
@@ -43,6 +41,23 @@
                     </tr>
                 </tbody>
             </table>
+        </div> -->
+        <div class="col-md-3" ng-repeat="row in vehicles">
+            <div class="card">
+                <div class="card-image">
+                    <img class="img-responsive" src="https://material-design.storage.googleapis.com/publish/v_2/material_ext_publish/0Bx4BSt6jniD7TDlCYzRROE84YWM/materialdesign_introduction.png">
+                    <!-- <span class="card-title">Material Cards</span> -->
+                </div>
+                
+                <div class="card-content">
+                    <p>{{row.vehicle}}</p>
+                </div>
+                
+                <div class="card-action">
+                    <button class="btn btn-default" ng-click="updateEntryV(row._id)" ><i class="fa fa-edit" aria-hidden="true"></i> Update</button>
+                    <button class="btn btn-danger " ng-click="deleteDataV(row)"><i class="fa fa-trash" aria-hidden="true"></i> Delete</button>
+                </div>
+            </div>
         </div>
     </div>
 </div>

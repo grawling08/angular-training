@@ -4,13 +4,14 @@
     angular.module('starter')
         .config(configuration);
     
-    configuration.$inject = ['$stateProvider','$urlRouterProvider','RestangularProvider','API_URL','API_VERSION','$httpProvider'];
+    configuration.$inject = ['$stateProvider','$urlRouterProvider','RestangularProvider','API_URL','API_VERSION','$httpProvider','cfpLoadingBarProvider'];
     
-    function configuration($stateProvider, $urlRouterProvider, RestangularProvider,API_URL,API_VERSION,$httpProvider){
+    function configuration($stateProvider, $urlRouterProvider, RestangularProvider,API_URL,API_VERSION,$httpProvider,cfpLoadingBarProvider){
         
         RestangularProvider.setBaseUrl(API_URL + API_VERSION);
         $httpProvider.interceptors.push('httpInterceptor');
-
+        cfpLoadingBarProvider.includeSpinner = false;
+        
         $urlRouterProvider.otherwise('/login');
         $stateProvider
             .state('main',{
@@ -29,6 +30,6 @@
             .state('main.about',{
                 url: '/about',
                 templateUrl:'./modules/about.html'
-            })
+            });
     }
 })();

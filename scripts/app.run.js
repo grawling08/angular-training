@@ -4,9 +4,9 @@
     angular.module('starter')
         .run(appRun);
 
-    appRun.$inject = ['$rootScope','loginFactory','localStorageService','$location'];
+    appRun.$inject = ['$rootScope','loginFactory','localStorageService','$location','cfpLoadingBar'];
 
-    function appRun($rootScope,loginFactory,localStorageService,$location){
+    function appRun($rootScope,loginFactory,localStorageService,$location,cfpLoadingBar){
 
         if(loginFactory.getCurrentUser()){
             $rootScope.currentUser = loginFactory.getCurrentUser();
@@ -34,10 +34,12 @@
 
         $rootScope.$on('loading:start',function(){
             console.log('start loading');
+            cfpLoadingBar.start();
         });
 
         $rootScope.$on('loading:stop',function(){
             console.log('stop loading');
+            cfpLoadingBar.complete();
         });
     }
 

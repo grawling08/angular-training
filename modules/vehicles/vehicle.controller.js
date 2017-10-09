@@ -15,6 +15,8 @@
                     var vehicle = data.response.result;
                     if (vehicle) {
                         $scope.vehicle = vehicle;
+                        //console.log(new Date($scope.vehicle.datepurchased));
+                        $scope.vehicle.datepurchased = new Date($scope.vehicle.datepurchased);
                     }
                 } else {
                     toastr.error(data.response.msg, 'ERROR');
@@ -26,7 +28,7 @@
         $scope.saveEntryV = function () {
             if (_.isEmpty(v_id)) {
                 $scope.vehicle.datepurchased = $filter('date')($scope.vehicle.datepurchased, "yyyy-MM-dd");
-                console.log($scope.vehicle);
+                //console.log($scope.vehicle);
                 vehiclesFactory.saveVehicle($scope.vehicle).then(function (data) {
                     if (data.statusCode == 200 && data.response.success) {
                         toastr.success(data.response.msg, 'SUCCESS');

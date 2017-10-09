@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "angular-datetime-input": "^5.2.1",
     "browser-sync": "^2.18.13",
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.1",
