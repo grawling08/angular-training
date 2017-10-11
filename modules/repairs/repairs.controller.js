@@ -2,11 +2,11 @@
     'use strict';
 
     angular.module('starter')
-        .controller('vehiclesController', vehiclesController);
+        .controller('repairsController', repairsController);
 
-    vehiclesController.$inject = ['$scope', 'vehiclesFactory', '$filter', '$uibModal','ngDialog','toastr'];
+        repairsController.$inject = ['$scope', 'vehiclesFactory', '$filter', '$uibModal','ngDialog','toastr'];
 
-    function vehiclesController($scope, vehiclesFactory, $filter, $uibModal, ngDialog, toastr) {
+    function repairsController($scope, vehiclesFactory, $filter, $uibModal, ngDialog, toastr) {
         $scope.vehicles = [];
         $scope.vehiclesCopy = [];
         $scope.txtSearch = '';

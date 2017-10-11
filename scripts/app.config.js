@@ -10,7 +10,7 @@
         
         RestangularProvider.setBaseUrl(API_URL + API_VERSION);
         $httpProvider.interceptors.push('httpInterceptor');
-        cfpLoadingBarProvider.includeSpinner = false;
+        //cfpLoadingBarProvider.includeSpinner = false;
         
         $urlRouterProvider.otherwise('/login');
         $stateProvider

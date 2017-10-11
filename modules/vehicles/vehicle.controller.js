@@ -4,9 +4,9 @@
     angular.module('starter')
         .controller('vehicleModalCtrl', vehicleModalCtrl);
 
-    vehicleModalCtrl.$inject = ['$scope', '$uibModalInstance', 'vehiclesFactory', 'v_id', 'toastr', '$timeout', '$filter'];
+    vehicleModalCtrl.$inject = ['$scope', 'vehiclesFactory', 'toastr', '$timeout', '$filter','v_id','$state'];
 
-    function vehicleModalCtrl($scope, $uibModalInstance, vehiclesFactory, v_id, toastr, $timeout, $filter) {
+    function vehicleModalCtrl($scope, vehiclesFactory, toastr, $timeout, $filter, v_id, $state) {
         $scope.vehicle = {};
 
         if (!_.isEmpty(v_id)) {
@@ -31,9 +31,11 @@
                 //console.log($scope.vehicle);
                 vehiclesFactory.saveVehicle($scope.vehicle).then(function (data) {
                     if (data.statusCode == 200 && data.response.success) {
+                        //console.log(data.response);
                         toastr.success(data.response.msg, 'SUCCESS');
                         $timeout(function(){
-                            $uibModalInstance.close('save');
+                            //$uibModalInstance.close('save');
+                            $state.go('main.vehicles');
                         },1000);
                     } else if (!data.success && _.isArray(data.result)) {
                         _.each(data.result, function (row) {
@@ -51,7 +53,7 @@
                     if (data.statusCode == 200 && data.response.success) {
                         toastr.success(data.response.msg, 'SUCCESS');
                         $timeout(function(){
-                            $uibModalInstance.close('save');
+                            //$uibModalInstance.close('save');
                         },1000);
                     } else if (!data.success && _.isArray(data.result)) {
                         _.each(data.result, function (row) {
@@ -64,11 +66,6 @@
                     }
                 })
             }
-
-        }
-
-        $scope.cancelV = function () {
-            $uibModalInstance.dismiss('cancel');
         }
     }
 })();
