@@ -25,6 +25,14 @@
             });
         }
 
+        $scope.checkToggle = function(){
+            if (!_.isEmpty(v_id)) {
+                return false;
+            } else {
+                return true;
+            }
+        };
+
         $scope.saveEntryV = function () {
             if (_.isEmpty(v_id)) {
                 $scope.vehicle.datepurchased = $filter('date')($scope.vehicle.datepurchased, "yyyy-MM-dd");

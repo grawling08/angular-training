@@ -2,7 +2,7 @@
     'use strict';
 
     angular.module('starter')
-        .directive(scrollable);
+        .directive('scrollable',scrollable);
     
     scrollable.$inject = ['$document', '$interval', '$timeout', '$window'];
     
@@ -84,7 +84,7 @@
                 }
                 
                 function checkForScroll(){
-                    console.log('checking tabs for scroll');
+                    //console.log('checking tabs for scroll');
                     var currentlyScrollable = element.classList.contains('scrollable'),
                         difference = 1;
     
@@ -95,7 +95,7 @@
                     } else {
                         difference = navTabsElement.clientHeight - navTabsElement.querySelector('.nav-tabs > li').clientHeight;
                     }
-                    console.log(difference);
+                    //console.log(difference);
     
                     if (difference > 2) {
                         element.classList.add('scrollable');
@@ -110,7 +110,7 @@
                     });
                     
                     wrappedElement.on('click', function($event) {
-                        console.log('CLICK', $event.defaultPrevented);
+                        //console.log('CLICK', $event.defaultPrevented);
                     });
     
                     wrappedElement.on('mouseup mouseleave', function($event) {
