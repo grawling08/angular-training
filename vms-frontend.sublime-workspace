@@ -1,0 +1,367 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"dep",
+				"dept_id"
+			],
+			[
+				"print",
+				"print_r"
+			],
+			[
+				"lo",
+				"longitude"
+			],
+			[
+				"Vue",
+				"VueGoogleMaps"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "Package Control: ",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"Snippet: ",
+				"Snippet: Lorem ipsum"
+			],
+			[
+				"insal",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 432.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/RA/Desktop/node-projects/angular"
+	],
+	"file_history":
+	[
+		"/C/xampp/htdocs/clearance/main.php",
+		"/C/xampp/htdocs/clearance/clearance.php",
+		"/C/xampp/htdocs/clearance/users.php",
+		"/C/xampp/htdocs/clearance/addemp.php",
+		"/C/xampp/htdocs/clearance/adduser.php",
+		"/C/xampp/htdocs/clearance/edituser.php",
+		"/C/xampp/htdocs/clearance/employees.php",
+		"/C/xampp/htdocs/clearance/php_modules/deluser.php",
+		"/C/xampp/htdocs/clearance/php_modules/saveuser.php",
+		"/C/xampp/htdocs/clearance/index.php",
+		"/C/xampp/htdocs/clearance/editemp.php",
+		"/C/xampp/htdocs/clearance/php_modules/saveemp.php",
+		"/C/xampp/htdocs/clearance/php_modules/delemp.php",
+		"/C/xampp/htdocs/RecordTSystem/admins/info/govoffice_list.php",
+		"/C/xampp/htdocs/RecordTSystem/admins/info/govoffice_save.php",
+		"/C/xampp/htdocs/RecordTSystem/admins/govoffice_page.php",
+		"/C/xampp/htdocs/RecordTSystem/admins/js/other.js",
+		"/C/xampp/htdocs/RecordTSystem/admins/info/barangays_save.php",
+		"/C/xampp/htdocs/RecordTSystem/admins/info/barangay_list.php",
+		"/C/xampp/htdocs/RecordTSystem/admins/barangay_page.php",
+		"/C/xampp/htdocs/RecordTSystem/admins/classification_page.php",
+		"/C/xampp/htdocs/RecordTSystem/admins/other_page.php",
+		"/C/xampp/htdocs/RecordTSystem/admins/info/barangays_list.php",
+		"/C/xampp/htdocs/RecordTSystem/admins/js/barangay_page.php",
+		"/C/Users/RA/Desktop/node-projects/meanstack/app/daos/users.js",
+		"/C/Users/RA/Desktop/node-projects/meanstack/app/controllers/users.js",
+		"/C/Users/RA/Desktop/node-projects/meanstack/app/routes/routing/users.js",
+		"/C/Users/RA/Desktop/node-projects/meanstack/app/routes/index.js",
+		"/C/Users/RA/Desktop/node-projects/meanstack/app/utils/middleware.js",
+		"/C/Users/RA/Desktop/node-projects/meanstack/app/validation/users.js",
+		"/C/Users/RA/Desktop/node-projects/meanstack/index.js",
+		"/C/Users/RA/Desktop/node-projects/meanstack/app/routes/documents.js",
+		"/C/Users/RA/Desktop/node-projects/meanstack/config/passport.js",
+		"/C/Users/RA/Desktop/node-projects/meanstack/app/utils/callback.js",
+		"/C/Users/RA/Desktop/node-projects/meanstack/app/utils/database.js",
+		"/C/Users/RA/Desktop/node-projects/meanstack/config/application.js",
+		"/C/Users/RA/Desktop/node-projects/meanstack/app/utils/helper.js",
+		"/C/Users/RA/Desktop/node-projects/meanstack/config/environment/development.js",
+		"/C/Users/RA/Desktop/node-projects/meanstack/config/environment/production.js",
+		"/C/Users/RA/Desktop/node-projects/meanstack/config/express.js",
+		"/C/Users/RA/Desktop/node-projects/meanstack/config/authentication.js",
+		"/C/Users/RA/Desktop/node-projects/meanstack/config/env.js",
+		"/C/Users/RA/Desktop/node-projects/meanstack/bower.json",
+		"/C/xampp/htdocs/RecordTSystem/admins/info/classification_save.php",
+		"/C/xampp/htdocs/RecordTSystem/admins/info/position_update.php",
+		"/C/xampp/htdocs/RecordTSystem/admins/js/search_resord.js",
+		"/C/xampp/htdocs/RecordTSystem/admins/info/classification_list.php",
+		"/C/xampp/htdocs/RecordTSystem/admins/info/councilor_list.php",
+		"/C/xampp/htdocs/RecordTSystem/admins/councilor_page.php",
+		"/C/xampp/htdocs/RecordTSystem/admins/js/search_councilor.js",
+		"/C/xampp/htdocs/RecordTSystem/admins/js/index.js",
+		"/C/xampp/htdocs/RecordTSystem/js/index.js",
+		"/C/xampp/htdocs/RecordTSystem/admins/info/category_list.php",
+		"/C/xampp/htdocs/RecordTSystem/admins/category_page.php",
+		"/C/xampp/htdocs/RecordTSystem/admins/info/resord_attach_add.php",
+		"/C/xampp/htdocs/RecordTSystem/admins/js/search_resord_attach.js",
+		"/C/xampp/htdocs/RecordTSystem/admins/info/resord_edit.php",
+		"/C/xampp/htdocs/RecordTSystem/admins/resord_page.php",
+		"/C/xampp/htdocs/RecordTSystem/admins/info/resord_list.php",
+		"/C/xampp/htdocs/RecordTSystem/admins/index.php",
+		"/C/xampp/htdocs/RecordTSystem/css/mydesign.css",
+		"/C/xampp/htdocs/RecordTSystem/admins/info/resord_attach_list.php",
+		"/C/xampp/htdocs/RecordTSystem/js/global_xml.js",
+		"/C/xampp/htdocs/RecordTSystem/js/global_info_array.js",
+		"/C/xampp/htdocs/RecordTSystem/admins/info/resord_add.php",
+		"/C/Users/RA/Desktop/node-projects/angular/package.json",
+		"/C/xampp/htdocs/RecordTSystem/admins/info/cocouncilor_list.php",
+		"/C/xampp/htdocs/RecordTSystem/index.php",
+		"/C/xampp/htdocs/RecordTSystem/admins/js/search_acc.js",
+		"/C/xampp/htdocs/RecordTSystem/admins/js/search_account_log.js",
+		"/C/xampp/htdocs/RecordTSystem/admins/js/search_category.js",
+		"/C/xampp/htdocs/RecordTSystem/admins/js/search_position.js",
+		"/C/xampp/htdocs/RecordTSystem/admins/js/search_sub_category.js",
+		"/C/xampp/htdocs/RecordTSystem/admins/js/search_type.js",
+		"/C/xampp/htdocs/RecordTSystem/admins/info/committee_term_list.php",
+		"/C/xampp/htdocs/RecordTSystem/admins/info/category_sub_update.php",
+		"/C/xampp/htdocs/RecordTSystem/admins/info/category_sub_list.php",
+		"/C/xampp/htdocs/RecordTSystem/js/search_resord.js",
+		"/C/Users/RA/Desktop/node-projects/meanstacktraining/app/services/users.js",
+		"/C/Users/RA/Desktop/node-projects/meanstacktraining/server.js",
+		"/C/Users/RA/Desktop/VMS/vms/package.json",
+		"/C/Users/RA/Desktop/VMS/vms/server.js",
+		"/C/Users/RA/Desktop/mern/circleci-demo-javascript-express/package.json",
+		"/C/Users/RA/Desktop/cordova/myApp/package.json",
+		"/D/Android/hris-android/hris-app/www/views/index.ejs",
+		"/D/Android/hris-android/hris-app/www/public/javascripts/app.js",
+		"/D/Android/hris-android/hris-app/www/app.js",
+		"/C/Users/RA/Documents/Visual Studio 2010/Projects/Payroll2/.gitignore",
+		"/D/Android/hris-android/hris-app/www/index.html",
+		"/D/Android/hris-android/hris-app/www/service-worker.js",
+		"/D/Android/hris-android/hris-app/www/manifest.json",
+		"/C/Users/RA/Desktop/sample.bat",
+		"/C/Users/RA/quasar/firstApp/src/components/Chat.vue",
+		"/C/Users/RA/quasar/firstApp/src/main.js",
+		"/C/Users/RA/quasar/firstApp/src/components/Modals.vue",
+		"/C/Users/RA/quasar/firstApp/src/components/Index.vue",
+		"/C/Users/RA/quasar/firstApp/src/components/Map.vue",
+		"/C/Users/RA/quasar/firstApp/src/router.js",
+		"/C/Users/RA/quasar/firstApp/src/components/Dialog.vue",
+		"/C/Users/RA/quasar/firstApp/package.json",
+		"/C/Users/RA/quasar/firstApp/.git",
+		"/C/Users/RA/quasar/firstApp/src/index.html",
+		"/C/Users/RA/quasar/firstApp/dist/index.html",
+		"/C/Users/RA/quasar/firstapp/firstapp/src/index.html",
+		"/C/Users/RA/quasar/firstapp/firstapp/src/router.js",
+		"/C/Users/RA/Desktop/onsenui/firstApp/package.json",
+		"/C/Users/RA/quasar/firstapp/firstapp/src/components/Index.vue",
+		"/C/Users/RA/quasar/firstapp/firstapp/src/components/dialog.vue",
+		"/C/Users/RA/quasar/firstapp/firstapp/src/components/undefined.vue",
+		"/D/laravel/chatapp/.env",
+		"/D/laravel/lumen-messenger-api/app/Http/Controllers/MessagesController.php",
+		"/D/laravel/lumen-messenger-api/.env",
+		"/D/laravel/chatapp/app/User.php",
+		"/D/laravel/chatapp/routes/web.php",
+		"/D/laravel/chatapp/resources/views/messenger/partials/thread.blade.php",
+		"/D/laravel/chatapp/resources/views/messenger/create.blade.php",
+		"/D/laravel/chatapp/resources/views/messenger/index.blade.php",
+		"/D/laravel/chatapp/resources/views/messenger/show.blade.php",
+		"/D/laravel/chatapp/resources/views/messenger/unread-count.blade.php",
+		"/D/laravel/chatapp/resources/views/messenger/partials/no-threads.blade.php",
+		"/D/laravel/chatapp/resources/views/messenger/partials/messages.blade.php",
+		"/D/laravel/chatapp/resources/views/messenger/partials/form-message.blade.php",
+		"/D/laravel/chatapp/resources/views/messenger/partials/flash.blade.php",
+		"/D/laravel/chatapp/app/Http/Controllers/MessagesController.php",
+		"/D/laravel/chatapp/database/migrations/2014_10_12_100000_create_password_resets_table.php",
+		"/D/laravel/chatapp/resources/views/layout/master.blade.php",
+		"/D/laravel/chatapp/composer.json",
+		"/D/laravel/chatapp/config/app.php"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"govoffice_save.php",
+			"govoffice_page.php",
+			"<current file>",
+			"C:\\xampp\\htdocs\\RecordTSystem,<current file>",
+			"C:\\xampp\\htdocs\\RecordTSystem"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"Admin",
+			"\n\t\t\t\t\t",
+			"}\n",
+			"'];\n",
+			"user",
+			"brgyid",
+			"brgyname",
+			"combobox_barangays",
+			"brgyNameNew",
+			"classid",
+			"classname",
+			"$.ajax",
+			"arr_council\t=new ActiveXObject(\"Microsoft.XMLHTTP\");",
+			"div_new_resord",
+			"add_attach",
+			"cmb_author",
+			"button",
+			".button_trans",
+			"tcolorw",
+			".tcolorw",
+			"C:\\xampp\\htdocs",
+			"OR ",
+			"or ",
+			"WHEN",
+			" \"",
+			"\">"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"govofficeid",
+			"govofficename",
+			"combobox_govoff",
+			"govoffNameNew",
+			"govoff",
+			"brgyid",
+			"brgyname",
+			"tcolorbk"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "vms-frontend.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 244.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

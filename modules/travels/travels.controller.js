@@ -15,7 +15,7 @@
             //console.log("data:" + data);
             if (data.statusCode == 200 && data.response.success) {
                 var travels = data.response.result;
-                console.log('travels: ' + travels);
+                //console.log('travels: ' + travels);
                 if (!_.isEmpty(travels)) {
                     $scope.travels = travels;
                     $scope.travelsCopy = angular.copy(travels);
@@ -23,33 +23,73 @@
             }
         });
 
-        // $scope.searchV = function () {
-        //     if ($scope.txtSearch) {
-        //         $scope.travels = $scope.travelsCopy;
-        //         var result = $filter('filter')($scope.vehicles, $scope.txtSearch);
-        //         if (result) {
-        //             $scope.vehicles = result;
-        //         } else {
-        //             $scope.vehicles = $scope.txtSearch + " is not found!";
-        //         }
-        //     } else {
-        //         $scope.vehicles = $scope.vehiclesCopy;
-        //     }
-        // }
+        $scope.searchT = function () {
+            if ($scope.txtSearch) {
+                $scope.travels = $scope.travelsCopy;
+                var result = $filter('filter')($scope.travels, $scope.txtSearch);
+                if (result) {
+                    $scope.travels = result;
+                } else {
+                    $scope.travels = $scope.txtSearch + " is not found!";
+                }
+            } else {
+                $scope.travels = $scope.travelsCopy;
+            }
+        }
 
-        // $scope.refreshV = function () {
-        //     vehiclesFactory.getAllVehicles().then(function (data) {
-        //         //console.log("data:" + data);
-        //         if (data.statusCode == 200 && data.response.success) {
-        //             var vehicles = data.response.result;
-        //             console.log('vehicles: ' + vehicles);
-        //             if (!_.isEmpty(vehicles)) {
-        //                 $scope.vehicles = vehicles;
-        //                 $scope.vehiclesCopy = angular.copy(vehicles);
-        //             }
-        //         }
-        //     });
-        // }
+        $scope.refreshT = function () {
+            travelsFactory.getAllTravels().then(function (data) {
+                //console.log("data:" + data);
+                if (data.statusCode == 200 && data.response.success) {
+                    var travels = data.response.result;
+                    //console.log('travels: ' + travels);
+                    if (!_.isEmpty(travels)) {
+                        $scope.travels = travels;
+                        $scope.travelsCopy = angular.copy(travels);
+                    }
+                }
+            });
+        }
+
+        $scope.newEntry = function () {
+            var modalInstance = $uibModal.open({
+                animation: true,
+                templateUrl: './modules/travels/travel.modal.html',
+                size: 'md',
+                controller: 'travelModalCtrl',
+                resolve: {
+                    travel_id: function(){
+                        return null;
+                    }
+                }
+            });
+
+            modalInstance.result.then(function (selectedItem) { 
+                if(selectedItem == 'save'){
+                    $scope.refresh();
+                }
+            }, function () { });
+        }
+
+        $scope.updateEntry = function (_id) {
+            var modalInstance = $uibModal.open({
+                animation: true,
+                templateUrl: './modules/travels/travel.modal.html',
+                size: 'md',
+                controller: 'travelModalCtrl',
+                resolve: {
+                    travel_id: function(){
+                        return _id;
+                    }
+                }
+            });
+
+            modalInstance.result.then(function (selectedItem) { 
+                if(selectedItem == 'save'){
+                    $scope.refresh();
+                }
+            }, function () { });
+        }
 
         // $scope.deleteDataV = function(row){
         //     $scope.modal = {
