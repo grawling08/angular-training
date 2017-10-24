@@ -66,7 +66,7 @@
 
             modalInstance.result.then(function (selectedItem) { 
                 if(selectedItem == 'save'){
-                    $scope.refresh();
+                    $scope.refreshT();
                 }
             }, function () { });
         }
@@ -86,31 +86,31 @@
 
             modalInstance.result.then(function (selectedItem) { 
                 if(selectedItem == 'save'){
-                    $scope.refresh();
+                    $scope.refreshT();
                 }
             }, function () { });
         }
 
-        // $scope.deleteDataV = function(row){
-        //     $scope.modal = {
-        //         title:'vehicles',
-        //         message:'Delete this Data?'
-        //     };
-        //     ngDialog.openConfirm({
-        //         templateUrl: './modules/dialogs/custom.dialog.html',
-        //         scope: $scope,
-        //         className: 'ngdialog-theme-default'
-        //     }).then(function(){
-        //         vehiclesFactory.deleteVehicle(row._id).then(function(data){
-        //             if(data.statusCode == 200 && data.response.success){
-        //                 toastr.success(data.response.msg, 'SUCCESS');
-        //                 $scope.refreshV();
-        //             } else {
-        //                 toastr.error(data.response.msg, 'ERROR');
-        //                 return;
-        //             }
-        //         })
-        //     });
-        // }
+        $scope.deleteDataT = function(row){
+            $scope.modal = {
+                title:'travels',
+                message:'Delete this Data?'
+            };
+            ngDialog.openConfirm({
+                templateUrl: './modules/dialogs/custom.dialog.html',
+                scope: $scope,
+                className: 'ngdialog-theme-default'
+            }).then(function(){
+                travelsFactory.deleteTravel(row._id).then(function(data){
+                    if(data.statusCode == 200 && data.response.success){
+                        toastr.success(data.response.msg, 'SUCCESS');
+                        $scope.refreshT();
+                    } else {
+                        toastr.error(data.response.msg, 'ERROR');
+                        return;
+                    }
+                })
+            });
+        }
     }
 })();

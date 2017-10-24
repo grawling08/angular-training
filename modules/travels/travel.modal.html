@@ -4,29 +4,36 @@
 <div class="modal-body" id="modal-body">
     <form>
         <div class="form-group">
+            <label for="exampleInputPassword1">Vehicle</label>
+            <select class="form-control" ng-model="travel.vehicle_id" >
+                <!-- <option ng-repeat="row in vehicles" scope="row" value="{{row.id}}">{{row.vehicle}}</option> -->
+                <option ng-repeat="row in vehicles" scope="row" value="{{row.id}}" ng-selected="{{row.id === travel.vehicle_id}}">{{row.vehicle}}</option>
+            </select>
+            <!-- <select ng-model="travel.vehicle" ng-options="vehicle as vehicle.vehicle for vehicle in vehicles track by vehicle.id" class="form-control"></select>-->        
+        </div>
+        <div class="form-group">
             <label for="exampleInputPassword1">Driver</label>
             <input type="text" class="form-control" id="exampleInputPassword1" ng-model="travel.driver">
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Departure</label>
             <!-- <input type="text" class="form-control" id="exampleInputPassword1" ng-model="travel.departure"> -->
-            <datetimepicker
-                date-format="yyyy-MM-dd" 
-                date-options="dateOptions" 
-                date-disabled="isDisabledDate(date, mode)"
-                hidden-time="false"
-                hidden-date="false" 
-                name="datetimepicker"
-                show-spinners="true"
-                readonly-time="false"
-                date-opened="dateOpened"
-                show-button-bar="false"
-                id="" ng-model="travel.departure">
-            </datetimepicker>
+            <p class="input-group">
+                <input type="text" class="form-control" datetime-picker="yyyy-MM-dd HH:mm" ng-model="travel.departure" datepicker-options="departure.datepickerOptions" is-open="isOpen"  />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="openCalendar($event, prop)"><i class="fa fa-calendar"></i></button>
+                </span>
+            </p>
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Arrival</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" ng-model="travel.arrival">
+            <!-- <input type="text" class="form-control" id="exampleInputPassword1" ng-model="travel.arrival"> -->
+            <p class="input-group">
+                <input type="text" class="form-control" datetime-picker="yyyy-MM-dd HH:mm" ng-model="travel.arrival" datepicker-options="arrival.datepickerOptions" is-open="isOpen2"  />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="openCalendar2($event, prop)"><i class="fa fa-calendar"></i></button>
+                </span>
+            </p>
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Destination</label>
@@ -34,11 +41,11 @@
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Passengers</label>
-            <input type="number" min="0" class="form-control" id="exampleInputPassword1" ng-model="travel.destination">
+            <input type="number" min="0" class="form-control" id="exampleInputPassword1" ng-model="travel.passengers">
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Remarks</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" ng-model="travel.destination">
+            <input type="text" class="form-control" id="exampleInputPassword1" ng-model="travel.remarks">
         </div>
     </form>
 </div>

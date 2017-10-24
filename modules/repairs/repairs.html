@@ -1,1 +1,51 @@
-asdf
+<div class="fluid" style="margin-top: 30px">
+    <div class="row">
+        <div class="col-md-6">
+            <a href="" id="" class="btn btn-default" ng-click="newEntry()">New</a>
+            <a href="" id="" class="btn btn-default" ng-click="refreshR()">Refresh</a>
+        </div>
+        <div class="col-md-6">
+            <div class="input-group">
+                <input type="text" name="" class="form-control" id="" ng-model="txtSearch" ng-keypress="($event.which === 13)?searchR():0"
+                    ng-change="(txtSearch.length < 1)?searchR():0">
+                <span class="input-group-btn">
+                    <a class="btn btn-default" href="" ng-click="searchR()">Search</a>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="table-responsive">
+            <table class="table table-condensed">
+                <thead>
+                    <tr>
+                        <th>Vehicle</th>
+                        <th>Repair Type</th>
+                        <th>Description</th>
+                        <th>Repaired By</th>
+                        <th>Shop</th>
+                        <th>Date</th>
+                        <th>Comments</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="row in repairs">
+                        <th scope="row">{{::row.driver}}</th>
+                        <td>{{row.departure}}</td>
+                        <td>{{row.arrival}}</td>
+                        <td>{{row.destination}}</td>
+                        <td>{{row.passengers}}</td>
+                        <td>{{row.remarks}}</td>
+                        <td>
+                            <button class="btn btn-default btn-sm" uib-tooltip="Update" ng-click="updateEntry(row._id)" ><i class="fa fa-edit" aria-hidden="true"></i></button>
+                            <button class="btn btn-danger btn-sm" uib-tooltip="Remove" ng-click="deleteDataR(row)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+    </div>
+</div>
