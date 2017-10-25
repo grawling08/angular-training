@@ -18,7 +18,6 @@
 						$scope.travel = travel;
 						$scope.travel.departure = new Date($scope.travel.departure);
 						$scope.travel.arrival = new Date($scope.travel.arrival);
-						console.dir($scope.travel);
 					}
 				} else {
 					toastr.error(data.response.msg, 'ERROR');
@@ -32,15 +31,12 @@
 				var vehicles = data.response.result;
 				if (vehicles) {
 					$scope.vehicles = vehicles;
-					console.dir($scope.vehicles);
 				}
 			} else {
 				toastr.error(data.response.msg, 'ERROR');
 				return;
 			}
 		});
-
-
 
 		$scope.departure = {
 			datepickerOptions: {
@@ -60,7 +56,6 @@
 				}
 			}
 		}
-
 		$scope.isOpen = false;
 		$scope.isOpen2 = false;
 		$scope.openCalendar = function(e) {

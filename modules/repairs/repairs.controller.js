@@ -4,56 +4,56 @@
     angular.module('starter')
         .controller('repairsController', repairsController);
 
-        repairsController.$inject = ['$scope', 'vehiclesFactory', '$filter', '$uibModal','ngDialog','toastr'];
+        repairsController.$inject = ['$scope', 'repairsFactory', '$filter', '$uibModal','ngDialog','toastr'];
 
-    function repairsController($scope, vehiclesFactory, $filter, $uibModal, ngDialog, toastr) {
-        $scope.vehicles = [];
-        $scope.vehiclesCopy = [];
+    function repairsController($scope, repairsFactory, $filter, $uibModal, ngDialog, toastr) {
+        $scope.repairs = [];
+        $scope.repairsCopy = [];
         $scope.txtSearch = '';
 
-        vehiclesFactory.getAllVehicles().then(function (data) {
+        repairsFactory.getAllRepairs().then(function (data) {
             //console.log("data:" + data);
             if (data.statusCode == 200 && data.response.success) {
-                var vehicles = data.response.result;
-                //console.log('vehicles: ' + vehicles);
-                if (!_.isEmpty(vehicles)) {
-                    $scope.vehicles = vehicles;
-                    $scope.vehiclesCopy = angular.copy(vehicles);
+                var repairs = data.response.result;
+                console.dir(repairs);
+                if (!_.isEmpty(repairs)) {
+                    $scope.repairs = repairs;
+                    $scope.repairsCopy = angular.copy(repairs);
                 }
             }
         });
 
-        $scope.searchV = function () {
+        $scope.searchR = function () {
             if ($scope.txtSearch) {
-                $scope.vehicles = $scope.vehiclesCopy;
-                var result = $filter('filter')($scope.vehicles, $scope.txtSearch);
+                $scope.repairs = $scope.repairsCopy;
+                var result = $filter('filter')($scope.repairs, $scope.txtSearch);
                 if (result) {
-                    $scope.vehicles = result;
+                    $scope.repairs = result;
                 } else {
-                    $scope.vehicles = $scope.txtSearch + " is not found!";
+                    $scope.repairs = $scope.txtSearch + " is not found!";
                 }
             } else {
-                $scope.vehicles = $scope.vehiclesCopy;
+                $scope.repairs = $scope.repairsCopy;
             }
         }
 
-        $scope.refreshV = function () {
-            vehiclesFactory.getAllVehicles().then(function (data) {
+        $scope.refreshR = function () {
+            repairsFactory.getAllRepairs().then(function (data) {
                 //console.log("data:" + data);
                 if (data.statusCode == 200 && data.response.success) {
-                    var vehicles = data.response.result;
-                    console.log('vehicles: ' + vehicles);
-                    if (!_.isEmpty(vehicles)) {
-                        $scope.vehicles = vehicles;
-                        $scope.vehiclesCopy = angular.copy(vehicles);
+                    var repairs = data.response.result;
+                    //console.log('repairs: ' + repairs);
+                    if (!_.isEmpty(repairs)) {
+                        $scope.repairs = repairs;
+                        $scope.repairsCopy = angular.copy(repairs);
                     }
                 }
             });
         }
 
-        $scope.deleteDataV = function(row){
+        $scope.deleteDataR = function(row){
             $scope.modal = {
-                title:'vehicles',
+                title:'repairs',
                 message:'Delete this Data?'
             };
             ngDialog.openConfirm({
@@ -61,7 +61,7 @@
                 scope: $scope,
                 className: 'ngdialog-theme-default'
             }).then(function(){
-                vehiclesFactory.deleteVehicle(row._id).then(function(data){
+                repairsFactory.deleteRepair(row._id).then(function(data){
                     if(data.statusCode == 200 && data.response.success){
                         toastr.success(data.response.msg, 'SUCCESS');
                         $scope.refreshV();

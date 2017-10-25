@@ -11,7 +11,7 @@
                 .state('main.repairs', {
                     url: '/repairs',
                     templateUrl: './modules/repairs/repairs.html',
-                    controller: 'vehiclesController'
+                    controller: 'repairsController'
                 });
         }
 })();
