@@ -4,24 +4,28 @@
     angular.module('starter')
         .controller('repairsController', repairsController);
 
-        repairsController.$inject = ['$scope', 'repairsFactory', '$filter', '$uibModal','ngDialog','toastr'];
+        repairsController.$inject = ['$scope', 'repairsFactory', 'partsusedFactory', '$filter', '$uibModal','ngDialog','toastr'];
 
-    function repairsController($scope, repairsFactory, $filter, $uibModal, ngDialog, toastr) {
+    function repairsController($scope, repairsFactory, partsusedFactory, $filter, $uibModal, ngDialog, toastr) {
         $scope.repairs = [];
         $scope.repairsCopy = [];
         $scope.txtSearch = '';
-
+        $scope.tbl = {
+            expanded: false
+        }
         repairsFactory.getAllRepairs().then(function (data) {
             //console.log("data:" + data);
             if (data.statusCode == 200 && data.response.success) {
                 var repairs = data.response.result;
-                console.dir(repairs);
+                //console.dir(repairs);
                 if (!_.isEmpty(repairs)) {
                     $scope.repairs = repairs;
                     $scope.repairsCopy = angular.copy(repairs);
                 }
             }
         });
+
+
 
         $scope.searchR = function () {
             if ($scope.txtSearch) {
