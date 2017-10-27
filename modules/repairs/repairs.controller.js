@@ -10,10 +10,20 @@
         $scope.repairs = [];
         $scope.repairsCopy = [];
         $scope.txtSearch = '';
-        $scope.tbl = {
-            expanded: false
-        }
-        repairsFactory.getAllRepairs().then(function (data) {
+        $scope.parts = []
+
+        // repairsFactory.getAllRepairs().then(function (data) {
+        //     //console.log("data:" + data);
+        //     if (data.statusCode == 200 && data.response.success) {
+        //         var repairs = data.response.result;
+        //         //console.dir(repairs);
+        //         if (!_.isEmpty(repairs)) {
+        //             $scope.repairs = repairs;
+        //             $scope.repairsCopy = angular.copy(repairs);
+        //         }
+        //     }
+        // });
+        repairsFactory.getAllRepairParts().then(function (data) {
             //console.log("data:" + data);
             if (data.statusCode == 200 && data.response.success) {
                 var repairs = data.response.result;
@@ -24,7 +34,6 @@
                 }
             }
         });
-
 
 
         $scope.searchR = function () {

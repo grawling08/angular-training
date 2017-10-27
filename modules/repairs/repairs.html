@@ -51,13 +51,28 @@
 					</tr>
 					<tr ng-if="row.expanded" ng-repeat-end="">
 			            <td colspan="9">
-			            	<table class="table table-condensed">
-			            		<tr>
-			            			<th>{{row.shop}}</th>
-			            			<th>column head 2</th>
-			            			<th>column head 3</th>
-			            			<th>column head 4</th>
-			            		</tr>
+			            	<table class="table table-condensed table-bordered">
+			            		<thead>
+			            			<tr><th colspan="6" style="text-align: center;">Parts Used</th></tr>
+			            			<tr>
+										<th>Part Number</th>
+										<th>Description</th>
+										<th>Quantity</th>
+										<th>Cost</th>
+										<th>Total</th>
+										<th></th>
+									</tr>
+			            		</thead>
+			            		<tbody>
+			            			<tr ng-repeat="parts in row.repairpart">
+										<th>{{parts.partNumber}}</th>
+										<th>{{parts.description}}</th>
+										<th>{{parts.quantity}}</th>
+										<th>{{parts.quantity}}</th>
+										<th>{{parts.total}}</th>
+										<th></th>
+									</tr>
+			            		</tbody>
 			            	</table>
 			            </td>
 			        </tr>

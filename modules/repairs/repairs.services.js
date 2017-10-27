@@ -15,6 +15,13 @@
                         return err.data;
                     });
                 },
+                getAllRepairParts: function(){
+                    return Restangular.all('repairparts').customGET().then(function(res){
+                        return res;
+                    }, function(err){
+                        return err.data;
+                    });
+                },
                 saveRepair: function(data){
                     return Restangular.all('repairs').customPOST(data).then(function(res){
                         return res;
