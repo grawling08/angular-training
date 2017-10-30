@@ -2,11 +2,11 @@
     'use strict';
 
     angular.module('starter')
-        .factory('partsusedFactory', partsusedFactory);
+        .factory('partsFactory', partsFactory);
 
-        partsusedFactory.$inject = ['Restangular'];
+        partsFactory.$inject = ['Restangular'];
 
-        function partsusedFactory(Restangular){
+        function partsFactory(Restangular){
             return {
                 getAllParts: function(){
                     return Restangular.all('parts').customGET().then(function(res){

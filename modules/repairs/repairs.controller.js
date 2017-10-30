@@ -4,13 +4,13 @@
     angular.module('starter')
         .controller('repairsController', repairsController);
 
-        repairsController.$inject = ['$scope', 'repairsFactory', 'partsusedFactory', '$filter', '$uibModal','ngDialog','toastr'];
+        repairsController.$inject = ['$scope', 'repairsFactory', '$filter', '$uibModal','ngDialog','toastr'];
 
-    function repairsController($scope, repairsFactory, partsusedFactory, $filter, $uibModal, ngDialog, toastr) {
+    function repairsController($scope, repairsFactory, $filter, $uibModal, ngDialog, toastr) {
         $scope.repairs = [];
         $scope.repairsCopy = [];
         $scope.txtSearch = '';
-        $scope.parts = []
+        $scope.parts = [];
 
         // repairsFactory.getAllRepairs().then(function (data) {
         //     //console.log("data:" + data);
@@ -64,6 +64,47 @@
             });
         }
 
+
+        $scope.newPart = function (_idpart) {
+            var modalInstance = $uibModal.open({
+                animation: true,
+                templateUrl: './modules/parts/part.modal.html',
+                size: 'md',
+                controller: 'partsController',
+                resolve: {
+                    part_id: function(){
+                        return null;
+                    }
+                }
+            });
+
+            modalInstance.result.then(function (selectedItem) { 
+                if(selectedItem == 'save'){
+                    $scope.refresh();
+                }
+            }, function () { });
+        }
+
+        $scope.updatePart = function (_idpart) {
+            var modalInstance = $uibModal.open({
+                animation: true,
+                templateUrl: './modules/parts/part.modal.html',
+                size: 'md',
+                controller: 'partsController',
+                resolve: {
+                    part_id: function(){
+                        return _idpart;
+                    }
+                }
+            });
+
+            modalInstance.result.then(function (selectedItem) { 
+                if(selectedItem == 'save'){
+                    $scope.refresh();
+                }
+            }, function () { });
+        }
+
         $scope.deleteDataR = function(row){
             $scope.modal = {
                 title:'repairs',
@@ -74,7 +115,29 @@
                 scope: $scope,
                 className: 'ngdialog-theme-default'
             }).then(function(){
-                repairsFactory.deleteRepair(row._id).then(function(data){
+                repairsFactory.deleteRepair(row._idrepair).then(function(data){
+                    if(data.statusCode == 200 && data.response.success){
+                        toastr.success(data.response.msg, 'SUCCESS');
+                        $scope.refreshV();
+                    } else {
+                        toastr.error(data.response.msg, 'ERROR');
+                        return;
+                    }
+                })
+            });
+        }
+
+        $scope.deleteDataP = function(row){
+            $scope.modal = {
+                title:'repairs',
+                message:'Delete this Data?'
+            };
+            ngDialog.openConfirm({
+                templateUrl: './modules/dialogs/custom.dialog.html',
+                scope: $scope,
+                className: 'ngdialog-theme-default'
+            }).then(function(){
+                repairsFactory.deleteRepair(row._idpart).then(function(data){
                     if(data.statusCode == 200 && data.response.success){
                         toastr.success(data.response.msg, 'SUCCESS');
                         $scope.refreshV();

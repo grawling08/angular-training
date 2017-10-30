@@ -51,9 +51,12 @@
 					</tr>
 					<tr ng-if="row.expanded" ng-repeat-end="">
 			            <td colspan="9">
-			            	<table class="table table-condensed table-bordered">
+			            	<table class="table table-condensed ">
 			            		<thead>
-			            			<tr><th colspan="6" style="text-align: center;">Parts Used</th></tr>
+			            			<tr>
+			            				<th><a href="" id="" class="btn btn-default" ng-click="newPart()">New Part</a></th>
+			            				<th colspan="5" style="text-align: center;">Parts Used</th>
+			            			</tr>
 			            			<tr>
 										<th>Part Number</th>
 										<th>Description</th>
@@ -68,9 +71,12 @@
 										<th>{{parts.partNumber}}</th>
 										<th>{{parts.description}}</th>
 										<th>{{parts.quantity}}</th>
-										<th>{{parts.quantity}}</th>
+										<th>{{parts.cost}}</th>
 										<th>{{parts.total}}</th>
-										<th></th>
+										<th>
+											<button class="btn btn-default btn-sm" uib-tooltip="Update" ng-click="updatePart(parts._idpart)" ><i class="fa fa-edit" aria-hidden="true"></i></button>
+											<button class="btn btn-danger btn-sm" uib-tooltip="Remove" ng-click="deleteDataP(parts)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+										</th>
 									</tr>
 			            		</tbody>
 			            	</table>
