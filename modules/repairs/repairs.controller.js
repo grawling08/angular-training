@@ -12,19 +12,7 @@
         $scope.txtSearch = '';
         $scope.parts = [];
 
-        // repairsFactory.getAllRepairs().then(function (data) {
-        //     //console.log("data:" + data);
-        //     if (data.statusCode == 200 && data.response.success) {
-        //         var repairs = data.response.result;
-        //         //console.dir(repairs);
-        //         if (!_.isEmpty(repairs)) {
-        //             $scope.repairs = repairs;
-        //             $scope.repairsCopy = angular.copy(repairs);
-        //         }
-        //     }
-        // });
         repairsFactory.getAllRepairParts().then(function (data) {
-            //console.log("data:" + data);
             if (data.statusCode == 200 && data.response.success) {
                 var repairs = data.response.result;
                 //console.dir(repairs);
@@ -51,11 +39,9 @@
         }
 
         $scope.refreshR = function () {
-            repairsFactory.getAllRepairs().then(function (data) {
-                //console.log("data:" + data);
+            repairsFactory.getAllRepairParts().then(function (data) {
                 if (data.statusCode == 200 && data.response.success) {
                     var repairs = data.response.result;
-                    //console.log('repairs: ' + repairs);
                     if (!_.isEmpty(repairs)) {
                         $scope.repairs = repairs;
                         $scope.repairsCopy = angular.copy(repairs);
@@ -65,7 +51,7 @@
         }
 
 
-        $scope.newPart = function (_idpart) {
+        $scope.newPart = function (repair_id) {
             var modalInstance = $uibModal.open({
                 animation: true,
                 templateUrl: './modules/parts/part.modal.html',
@@ -74,13 +60,16 @@
                 resolve: {
                     part_id: function(){
                         return null;
+                    },
+                    repair_id: function(){
+                        return repair_id;
                     }
                 }
             });
 
             modalInstance.result.then(function (selectedItem) { 
                 if(selectedItem == 'save'){
-                    $scope.refresh();
+                    $scope.refreshR();
                 }
             }, function () { });
         }
@@ -94,13 +83,16 @@
                 resolve: {
                     part_id: function(){
                         return _idpart;
+                    },
+                    repair_id: function(){
+                        return null;
                     }
                 }
             });
 
             modalInstance.result.then(function (selectedItem) { 
                 if(selectedItem == 'save'){
-                    $scope.refresh();
+                    $scope.refreshR();
                 }
             }, function () { });
         }
@@ -118,7 +110,7 @@
                 repairsFactory.deleteRepair(row._idrepair).then(function(data){
                     if(data.statusCode == 200 && data.response.success){
                         toastr.success(data.response.msg, 'SUCCESS');
-                        $scope.refreshV();
+                        $scope.refreshR();
                     } else {
                         toastr.error(data.response.msg, 'ERROR');
                         return;
@@ -140,7 +132,7 @@
                 repairsFactory.deleteRepair(row._idpart).then(function(data){
                     if(data.statusCode == 200 && data.response.success){
                         toastr.success(data.response.msg, 'SUCCESS');
-                        $scope.refreshV();
+                        $scope.refreshR();
                     } else {
                         toastr.error(data.response.msg, 'ERROR');
                         return;
