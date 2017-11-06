@@ -4,9 +4,9 @@
     angular.module('starter')
         .controller('repairsController', repairsController);
 
-        repairsController.$inject = ['$scope', 'repairsFactory', '$filter', '$uibModal','ngDialog','toastr'];
+        repairsController.$inject = ['$scope', 'repairsFactory', 'partsFactory', '$filter', '$uibModal','ngDialog','toastr'];
 
-    function repairsController($scope, repairsFactory, $filter, $uibModal, ngDialog, toastr) {
+    function repairsController($scope, repairsFactory, partsFactory, $filter, $uibModal, ngDialog, toastr) {
         $scope.repairs = [];
         $scope.repairsCopy = [];
         $scope.txtSearch = '';
@@ -129,7 +129,7 @@
                 scope: $scope,
                 className: 'ngdialog-theme-default'
             }).then(function(){
-                repairsFactory.deleteRepair(row._idpart).then(function(data){
+                partsFactory.deletePart(row._idpart).then(function(data){
                     if(data.statusCode == 200 && data.response.success){
                         toastr.success(data.response.msg, 'SUCCESS');
                         $scope.refreshR();
