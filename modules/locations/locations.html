@@ -20,7 +20,6 @@
             <table class="table table-condensed">
                 <thead>
                     <tr>
-                        <th>#</th>
                         <th>Name</th>
                         <th>Abbreviation</th>
                         <th></th>
@@ -28,8 +27,7 @@
                 </thead>
                 <tbody>
                     <tr ng-repeat="row in locations">
-                        <th scope="row">{{::row.user_id}}</th>
-                        <td>{{row.name}}</td>
+                        <th scope="row">{{row.name}}</td>
                         <td>{{row.abbrev}}</td>
                         <td>
                             <button class="btn btn-default btn-sm" uib-tooltip="Update" ng-click="updateEntry(row._id)" ><i class="fa fa-edit" aria-hidden="true"></i></button>

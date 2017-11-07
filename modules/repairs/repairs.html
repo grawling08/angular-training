@@ -45,7 +45,7 @@
 						<td>{{row.date}}</td>
 						<td>{{row.comments}}</td>
 						<td>
-							<button class="btn btn-default btn-sm" uib-tooltip="Update" ui-sref="main.repair({_id: row._id})" ><i class="fa fa-edit" aria-hidden="true"></i></button>
+							<button class="btn btn-default btn-sm" uib-tooltip="Update" ng-click="updateEntry(row._idrepair)" ><i class="fa fa-edit" aria-hidden="true"></i></button>
 							<button class="btn btn-danger btn-sm" uib-tooltip="Remove" ng-click="deleteDataR(row)"><i class="fa fa-trash" aria-hidden="true"></i></button>
 						</td>
 					</tr>

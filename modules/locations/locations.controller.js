@@ -15,7 +15,7 @@
             //console.log("data:" + data);
             if (data.statusCode == 200 && data.response.success) {
                 var locations = data.response.result;
-                console.log('locations: ' + locations);
+                console.dir(locations);
                 if (!_.isEmpty(locations)) {
                     $scope.locations = locations;
                     $scope.locationsCopy = angular.copy(locations);
@@ -46,6 +46,46 @@
                     }
                 }
             });
+        }
+
+        $scope.newEntry = function () {
+            var modalInstance = $uibModal.open({
+                animation: true,
+                templateUrl: './modules/locations/location.modal.html',
+                size: 'md',
+                controller: 'locationModalCtrl',
+                resolve: {
+                    loc_id: function(){
+                        return null;
+                    }
+                }
+            });
+
+            modalInstance.result.then(function (selectedItem) { 
+                if(selectedItem == 'save'){
+                    $scope.refresh();
+                }
+            }, function () { });
+        }
+
+        $scope.updateEntry = function (_id) {
+            var modalInstance = $uibModal.open({
+                animation: true,
+                templateUrl: './modules/locations/location.modal.html',
+                size: 'md',
+                controller: 'locationModalCtrl',
+                resolve: {
+                    loc_id: function(){
+                        return _id;
+                    }
+                }
+            });
+
+            modalInstance.result.then(function (selectedItem) { 
+                if(selectedItem == 'save'){
+                    $scope.refresh();
+                }
+            }, function () { });
         }
 
         $scope.deleteData = function(row){

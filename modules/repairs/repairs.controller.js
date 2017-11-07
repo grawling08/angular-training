@@ -15,7 +15,7 @@
         repairsFactory.getAllRepairParts().then(function (data) {
             if (data.statusCode == 200 && data.response.success) {
                 var repairs = data.response.result;
-                //console.dir(repairs);
+                console.dir(repairs);
                 if (!_.isEmpty(repairs)) {
                     $scope.repairs = repairs;
                     $scope.repairsCopy = angular.copy(repairs);
@@ -50,6 +50,45 @@
             });
         }
 
+        $scope.newEntry = function () {
+            var modalInstance = $uibModal.open({
+                animation: true,
+                templateUrl: './modules/repairs/repair.modal.html',
+                size: 'md',
+                controller: 'repairModalCtrl',
+                resolve: {
+                    r_id: function(){
+                        return null;
+                    }
+                }
+            });
+
+            modalInstance.result.then(function (selectedItem) { 
+                if(selectedItem == 'save'){
+                    $scope.refreshR();
+                }
+            }, function () { });
+        }
+
+        $scope.updateEntry = function (_id) {
+            var modalInstance = $uibModal.open({
+                animation: true,
+                templateUrl: './modules/repairs/repair.modal.html',
+                size: 'md',
+                controller: 'repairModalCtrl',
+                resolve: {
+                    r_id: function(){
+                        return _id;
+                    }
+                }
+            });
+
+            modalInstance.result.then(function (selectedItem) { 
+                if(selectedItem == 'save'){
+                    $scope.refreshR();
+                }
+            }, function () { });
+        }
 
         $scope.newPart = function (repair_id) {
             var modalInstance = $uibModal.open({
