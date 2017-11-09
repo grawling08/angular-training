@@ -22,14 +22,6 @@
             .state('main.home',{
                 url: '/home',
                 templateUrl:'./modules/home.html'
-            })
-            .state('main.contact',{
-                url: '/contact',
-                templateUrl:'./modules/contact.html'
-            })
-            .state('main.about',{
-                url: '/about',
-                templateUrl:'./modules/about.html'
             });
     }
 })();

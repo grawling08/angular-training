@@ -1,0 +1,40 @@
+<div class="fluid" style="margin-top: 30px">
+    <div class="row">
+        <div class="col-md-4 col-lg-4">
+            <a href="" id="" class="btn btn-default" ng-click="newEntry()">New</a>
+            <a href="" id="" class="btn btn-default" ng-click="refresh()">Refresh</a>
+        </div>
+        <div class="col-md-4 col-lg-4">
+            <div class="input-group">
+                <input type="text" name="" class="form-control" id="" ng-model="txtSearch" ng-keypress="($event.which === 13)?search():0"
+                    ng-change="(txtSearch.length < 1)?search():0">
+                <span class="input-group-btn">
+                    <a class="btn btn-default" href="" ng-click="search()">Search</a>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-lg-6">
+            <div class="table-responsive">
+            <table class="table table-condensed">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="row in vehicleTypes">
+                        <th scope="row">{{row.name}}</td>
+                        <td>
+                            <button class="btn btn-default btn-sm" uib-tooltip="Update" ng-click="updateEntry(row._id)" ><i class="fa fa-edit" aria-hidden="true"></i></button>
+                            <button class="btn btn-danger btn-sm" uib-tooltip="Remove" ng-click="deleteData(row)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+    </div>
+</div>
