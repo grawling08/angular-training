@@ -1,25 +1,43 @@
-<nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-                aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Project name</a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="" ui-sref="main.about">About</a></li>
-                <li><a href="" ui-sref="main.contact">Contact</a></li>
-                <li><a href="" ui-sref="main.users">Users</a></li>
+<div class="nav-side-menu">
+    <div class="brand">Vehicle Management System</div>
+    <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+    <div class="menu-list">
+        <ul id="menu-content" class="menu-content collapse out">
+            <li>
+                <a href="#">
+                    <i class="fa fa-dashboard fa-lg"></i> Dashboard
+                </a>
+            </li>
+            <li data-toggle="collapse" data-target="#products" class="collapsed">
+                <a href=""><i class="fa fa-car fa-lg"></i> Vehicles <span class="arrow"></span></a>
+            </li>
+            <ul class="sub-menu collapse" id="products">
+                <li ui-sref-active="active"><a href="" ui-sref="main.vehicles" >Vehicles Manager</a></li>
+                <li ui-sref-active="active"><a href="" ui-sref="main.repairs" >Repairs and Maintenance</a></li>
+                <li ui-sref-active="active"><a href="" ui-sref="main.travels" >Travels</a></li>
+                <li ui-sref-active="active"><a href="" ui-sref="" >Accident Records</a></li>
             </ul>
-        </div>
-        <!--/.nav-collapse -->
-    </div>
-</nav>
+            <li data-toggle="collapse" data-target="#setup" class="collapsed">
+                <a href=""><i class="fa fa-wrench fa-lg"></i> Setup <span class="arrow"></span></a>
+            </li>
+            <ul class="sub-menu collapse" id="setup">
+                <li ui-sref-active="active"><a href="" ui-sref="main.locations">Locations</a></li>
+                <li ui-sref-active="active"><a href="" ui-sref="main.vehicletypes">Vehicle Types</a></li>
+                <li ui-sref-active="active"><a href="" ui-sref="main.makes">Makes</a></li>
+                <li ui-sref-active="active"><a href="" ui-sref="">Models</a></li>
+                <li ui-sref-active="active"><a href="" ui-sref="main.users">Users</a></li>
+            </ul>
 
-<div ui-view></div>
+
+            <li data-toggle="collapse" data-target="#new" class="collapsed">
+                <a href=""><i class="fa fa-user fa-lg"></i> {{currentUser.firstname}} {{currentUser.lastname}}<span class="arrow"></span></a>
+            </li>
+            <ul class="sub-menu collapse" id="new">
+                <li><a href="" ng-click="logout()">Logout</a></li>
+            </ul>
+        </ul>
+    </div>
+</div>
+<div class="container" id="main">
+    <div ui-view></div>        
+</div>

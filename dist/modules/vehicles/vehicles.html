@@ -1,0 +1,63 @@
+<div class="container-fluid" style="margin-top: 20px;">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="input-group">
+                <span class="input-group-btn"><a href="" id="" class="btn btn-default" ui-sref="main.vehicle({_id: row._id})">New</a></span>
+                <span class="input-group-btn"><a href="" id="" class="btn btn-default" ng-click="refreshV()">Refresh</a></span>
+                <input type="text" name="" class="form-control" id="" ng-model="txtSearch" ng-keypress="($event.which === 13)?searchV():0"
+                    ng-change="(txtSearch.length < 1)?searchV():0">
+                <span class="input-group-btn">
+                    <a class="btn btn-default" href="" ng-click="searchV()">Search</a>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <!-- <div class="col-lg-12 col-md-6 col-sm-6">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Vehicle</th>
+                        <th>Department</th>
+                        <th>Location</th>
+                        <th>Driver</th>
+                        <th>Assigned to</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="row in vehicles">
+                        <th scope="row">{{::row.id}}</th>
+                        <td>{{row.vehicle}}</td>
+                        <td>{{row.department}}</td>
+                        <td>{{row.location}}</td>
+                        <td>{{row.driver}}</td>
+                        <td>{{row.assto}}</td>
+                        <td>
+                            <button class="btn btn-default btn-sm" uib-tooltip="Update" ng-click="updateEntryV(row._id)" ><i class="fa fa-edit" aria-hidden="true"></i></button>
+                            <button class="btn btn-danger btn-sm" uib-tooltip="Remove" ng-click="deleteDataV(row)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div> -->
+        <div class="col-md-3" ng-repeat="row in vehicles">
+            <div class="card">
+                <div class="card-image">
+                    <img class="img-responsive" src="https://auto.ndtvimg.com/car-images/medium/ferrari/gtc4lusso/ferrari-gtc4lusso.jpg?v=11">
+                    <!-- <span class="card-title">Material Cards</span> -->
+                </div>
+                
+                <div class="card-content">
+                    <p>{{row.vehicle}}</p>
+                </div>
+                
+                <div class="card-action">
+                    <a href="" ui-sref="main.vehicle({_id: row._id})" > Update</a>
+                    <a href="" ng-click="deleteDataV(row)"> Delete</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

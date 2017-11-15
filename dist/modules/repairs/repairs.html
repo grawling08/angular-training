@@ -1,0 +1,90 @@
+<div class="fluid" style="margin-top: 30px">
+	<div class="row">
+		<div class="col-md-6">
+			<a href="" id="" class="btn btn-default" ng-click="newEntry()">New</a>
+			<a href="" id="" class="btn btn-default" ng-click="refreshR()">Refresh</a>
+		</div>
+		<div class="col-md-6">
+			<div class="input-group">
+				<input type="text" name="" class="form-control" id="" ng-model="txtSearch" ng-keypress="($event.which === 13)?searchR():0"
+					ng-change="(txtSearch.length < 1)?searchR():0">
+				<span class="input-group-btn">
+					<a class="btn btn-default" href="" ng-click="searchR()">Search</a>
+				</span>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="table-responsive">
+			<table class="table table-condensed">
+				<thead>
+					<tr>
+						<th></th>
+						<th>Vehicle</th>
+						<th>Repair Type</th>
+						<th>Description</th>
+						<th>Repaired By</th>
+						<th>Shop</th>
+						<th>Date</th>
+						<th>Comments</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat-start="row in repairs">
+						<td scope="row">
+			              	<button class="btn btn-sm" ng-if="row.expanded" ng-click="row.expanded = false">-</button>
+			              	<button class="btn btn-sm" ng-if="!row.expanded" ng-click="row.expanded = true">+</button>
+			            </td>
+						<td>{{::row.vehicle}}</td>
+						<td>{{row.repairType}}</td>
+						<td>{{row.description}}</td>
+						<td>{{row.repairby}}</td>
+						<td>{{row.shop}}</td>
+						<td>{{row.date}}</td>
+						<td>{{row.comments}}</td>
+						<td>
+							<button class="btn btn-default btn-sm" uib-tooltip="Update" ng-click="updateEntry(row._idrepair)" ><i class="fa fa-edit" aria-hidden="true"></i></button>
+							<button class="btn btn-danger btn-sm" uib-tooltip="Remove" ng-click="deleteDataR(row)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+						</td>
+					</tr>
+					<tr ng-if="row.expanded" ng-repeat-end="">
+			            <td colspan="9">
+			            	<table class="table table-condensed ">
+			            		<thead>
+			            			<tr>
+			            				<th><a href="" id="" class="btn btn-default" ng-click="newPart(row.repair_id)">New Part</a></th>
+			            				<th colspan="5" style="text-align: center;">Parts Used</th>
+			            			</tr>
+			            			<tr>
+										<th>Part Number</th>
+										<th>Description</th>
+										<th>Quantity</th>
+										<th>Cost</th>
+										<th>Total</th>
+										<th></th>
+									</tr>
+			            		</thead>
+			            		<tbody>
+			            			<tr ng-repeat="parts in row.repairpart">
+										<th>{{parts.partNumber}}</th>
+										<th>{{parts.description}}</th>
+										<th>{{parts.quantity}}</th>
+										<th>{{parts.cost}}</th>
+										<th>{{parts.total}}</th>
+										<th>
+											<button class="btn btn-default btn-sm" uib-tooltip="Update" ng-click="updatePart(parts._idpart)" ><i class="fa fa-edit" aria-hidden="true"></i></button>
+											<button class="btn btn-danger btn-sm" uib-tooltip="Remove" ng-click="deleteDataP(parts)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+										</th>
+									</tr>
+			            		</tbody>
+			            	</table>
+			            </td>
+			        </tr>
+				</tbody>
+			</table>
+			</div>
+		</div>
+	</div>
+</div>

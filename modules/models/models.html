@@ -20,25 +20,17 @@
             <table class="table table-condensed">
                 <thead>
                     <tr>
-                        <th>Vehicle</th>
-                        <th>Driver</th>
-                        <th>Departure</th>
-                        <th>Arrival</th>
-                        <th>Destination</th>
-                        <th>Passengers</th>
-                        <th>Remarks</th>
+                        <th>Vehicle Type</th>
+                        <th>Make</th>
+                        <th>Model</th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="row in travels">
-                        <td scope="row">{{row.vehicle}}</td>
-                        <td>{{row.driver}}</td>
-                        <td>{{row.departure}}</td>
-                        <td>{{row.arrival}}</td>
-                        <td>{{row.destination}}</td>
-                        <td>{{row.passengers}}</td>
-                        <td>{{row.remarks}}</td>
+                    <tr ng-repeat="row in models">
+                        <td scope="row">{{row.vehicletype}}</td>
+                        <td>{{row.make}}</td>
+                        <td>{{row.name}}</td>
                         <td>
                             <button class="btn btn-default btn-sm" uib-tooltip="Update" ng-click="updateEntry(row._id)" ><i class="fa fa-edit" aria-hidden="true"></i></button>
                             <button class="btn btn-danger btn-sm" uib-tooltip="Remove" ng-click="deleteDataT(row)"><i class="fa fa-trash" aria-hidden="true"></i></button>

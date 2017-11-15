@@ -77,8 +77,7 @@
 					if (data.statusCode == 200 && data.response.success) {
 						toastr.success(data.response.msg, 'SUCCESS');
 						$timeout(function(){
-							//$uibModalInstance.close('save');
-							$state.go('main.travels');
+							$uibModalInstance.close('save');
 						},1000);
 					} else if (!data.success && _.isArray(data.result)) {
 						_.each(data.result, function (row) {
@@ -96,7 +95,6 @@
 						toastr.success(data.response.msg, 'SUCCESS');
 						$timeout(function(){
 							$uibModalInstance.close('save');
-							//$state.go('main.travels');
 						},1000);
 					} else if (!data.success && _.isArray(data.result)) {
 						_.each(data.result, function (row) {

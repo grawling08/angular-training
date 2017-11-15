@@ -20,7 +20,6 @@
             <table class="table table-condensed">
                 <thead>
                     <tr>
-                        <th>Vehicle</th>
                         <th>Driver</th>
                         <th>Departure</th>
                         <th>Arrival</th>
@@ -32,8 +31,7 @@
                 </thead>
                 <tbody>
                     <tr ng-repeat="row in travels">
-                        <td scope="row">{{row.vehicle}}</td>
-                        <td>{{row.driver}}</td>
+                        <td scope="row">{{::row.driver}}</td>
                         <td>{{row.departure}}</td>
                         <td>{{row.arrival}}</td>
                         <td>{{row.destination}}</td>

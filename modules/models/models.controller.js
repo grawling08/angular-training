@@ -2,47 +2,47 @@
     'use strict';
 
     angular.module('starter')
-        .controller('travelsController', travelsController);
+        .controller('modelsController', modelsController);
 
-        travelsController.$inject = ['$scope', 'travelsFactory', '$filter', '$uibModal','ngDialog','toastr'];
+        modelsController.$inject = ['$scope', 'modelsFactory', '$filter', '$uibModal','ngDialog','toastr'];
 
-    function travelsController($scope, travelsFactory, $filter, $uibModal, ngDialog, toastr) {
-        $scope.travels = [];
-        $scope.travelsCopy = [];
+    function modelsController($scope, modelsFactory, $filter, $uibModal, ngDialog, toastr) {
+        $scope.models = [];
+        $scope.modelsCopy = [];
         $scope.txtSearch = '';
 
-        travelsFactory.getAllTravels().then(function (data) {
+        modelsFactory.getAllModels().then(function (data) {
             if (data.statusCode == 200 && data.response.success) {
-                var travels = data.response.result;
-                console.dir(travels);
-                if (!_.isEmpty(travels)) {
-                    $scope.travels = travels;
-                    $scope.travelsCopy = angular.copy(travels);
+                var models = data.response.result;
+                console.dir(models);
+                if (!_.isEmpty(models)) {
+                    $scope.models = models;
+                    $scope.modelsCopy = angular.copy(models);
                 }
             }
         });
 
         $scope.searchT = function () {
             if ($scope.txtSearch) {
-                $scope.travels = $scope.travelsCopy;
-                var result = $filter('filter')($scope.travels, $scope.txtSearch);
+                $scope.models = $scope.modelsCopy;
+                var result = $filter('filter')($scope.models, $scope.txtSearch);
                 if (result) {
-                    $scope.travels = result;
+                    $scope.models = result;
                 } else {
-                    $scope.travels = $scope.txtSearch + " is not found!";
+                    $scope.models = $scope.txtSearch + " is not found!";
                 }
             } else {
-                $scope.travels = $scope.travelsCopy;
+                $scope.models = $scope.modelsCopy;
             }
         }
 
         $scope.refreshT = function () {
-            travelsFactory.getAllTravels().then(function (data) {
+            modelsFactory.getAllModels().then(function (data) {
                 if (data.statusCode == 200 && data.response.success) {
-                    var travels = data.response.result;
-                    if (!_.isEmpty(travels)) {
-                        $scope.travels = travels;
-                        $scope.travelsCopy = angular.copy(travels);
+                    var models = data.response.result;
+                    if (!_.isEmpty(models)) {
+                        $scope.models = models;
+                        $scope.modelsCopy = angular.copy(models);
                     }
                 }
             });
@@ -51,11 +51,11 @@
         $scope.newEntry = function () {
             var modalInstance = $uibModal.open({
                 animation: true,
-                templateUrl: './modules/travels/travel.modal.html',
+                templateUrl: './modules/models/model.modal.html',
                 size: 'md',
-                controller: 'travelModalCtrl',
+                controller: 'modelModalCtrl',
                 resolve: {
-                    travel_id: function(){
+                    model_id: function(){
                         return null;
                     }
                 }
@@ -71,11 +71,11 @@
         $scope.updateEntry = function (_id) {
             var modalInstance = $uibModal.open({
                 animation: true,
-                templateUrl: './modules/travels/travel.modal.html',
+                templateUrl: './modules/models/model.modal.html',
                 size: 'md',
-                controller: 'travelModalCtrl',
+                controller: 'modelModalCtrl',
                 resolve: {
-                    travel_id: function(){
+                    model_id: function(){
                         return _id;
                     }
                 }
@@ -90,7 +90,7 @@
 
         $scope.deleteDataT = function(row){
             $scope.modal = {
-                title:'Travels',
+                title:'Models',
                 message:'Delete this Data?'
             };
             ngDialog.openConfirm({
@@ -98,7 +98,7 @@
                 scope: $scope,
                 className: 'ngdialog-theme-default'
             }).then(function(){
-                travelsFactory.deleteTravel(row._id).then(function(data){
+                modelsFactory.deleteModel(row._id).then(function(data){
                     if(data.statusCode == 200 && data.response.success){
                         toastr.success(data.response.msg, 'SUCCESS');
                         $scope.refreshT();
