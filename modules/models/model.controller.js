@@ -4,11 +4,11 @@
 	angular.module('starter')
 		.controller('modelModalCtrl', modelModalCtrl);
 
-	modelModalCtrl.$inject = ['$scope', '$uibModalInstance', 'modelsFactory', 'vehicleTypesFactory', 'model_id', 'toastr', '$timeout','$filter', '$state'];
+	modelModalCtrl.$inject = ['$scope', '$uibModalInstance', 'modelsFactory', 'makesFactory', 'model_id', 'toastr', '$timeout','$filter', '$state'];
 
-	function modelModalCtrl($scope, $uibModalInstance, modelsFactory, vehicleTypesFactory, model_id, toastr, $timeout, $filter, $state) {
+	function modelModalCtrl($scope, $uibModalInstance, modelsFactory, makesFactory, model_id, toastr, $timeout, $filter, $state) {
 		$scope.model = {};
-		$scope.vtype = {};
+		$scope.make = {};
 
 		if (!_.isEmpty(model_id)) {
 			modelsFactory.getModel(model_id).then(function (data) {
@@ -24,11 +24,12 @@
 			});
 		}
 
-		vehicleTypesFactory.getAllVehicleTypes().then(function (data){
+		makesFactory.getAllMake().then(function (data) {
 			if (data.statusCode == 200 && data.response.success) {
-				var vtype = data.response.result;
-				if (vtype) {
-					$scope.vtype = vtype;
+				var make = data.response.result;
+				console.dir(make);
+				if (make) {
+					$scope.make = make;
 				}
 			} else {
 				toastr.error(data.response.msg, 'ERROR');
