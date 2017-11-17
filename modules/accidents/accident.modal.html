@@ -1,0 +1,49 @@
+<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">Add Accident</h3>
+</div>
+<div class="modal-body" id="modal-body">
+    <form>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Vehicle</label>
+            <select ng-model="accident.vehicle_id" class="form-control" ng-options="item.id as item.vehicle for item in vehicles">
+                <option value="">-- Select Vehicle --</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Driver</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" ng-model="accident.driver">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Description</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" ng-model="accident.description">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Date of Accident</label>
+            <!-- <input type="text" class="form-control" id="exampleInputPassword1" ng-model="travel.departure"> -->
+            <p class="input-group">
+                <input type="text" class="form-control" datetime-picker="yyyy-MM-dd" ng-model="accident.accidentdate" datepicker-options="accidentdate.datepickerOptions" is-open="isOpen" ng-focus="openCalendar($event, prop)" />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="openCalendar($event, prop)"><i class="fa fa-calendar"></i></button>
+                </span>
+            </p>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Date Recorded</label>
+            <!-- <input type="text" class="form-control" id="exampleInputPassword1" ng-model="travel.departure"> -->
+            <p class="input-group">
+                <input type="text" class="form-control" datetime-picker="yyyy-MM-dd" ng-model="accident.recorddate" datepicker-options="recorddate.datepickerOptions" is-open="isOpen" ng-focus="openCalendar2($event, prop)" />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="openCalendar2($event, prop)"><i class="fa fa-calendar"></i></button>
+                </span>
+            </p>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Remarks</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" ng-model="accident.remarks">
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-info" type="button" ng-click="saveEntry()">Save</button>
+    <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+</div>
