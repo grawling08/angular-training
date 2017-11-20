@@ -29,6 +29,7 @@
 		vehiclesFactory.getAllVehicles().then(function (data){
 			if (data.statusCode == 200 && data.response.success) {
 				var vehicles = data.response.result;
+				console.dir(vehicles);
 				if (vehicles) {
 					$scope.vehicles = vehicles;
 				}

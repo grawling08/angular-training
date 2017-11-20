@@ -4,10 +4,12 @@
     angular.module('starter')
         .controller('vehicleModalCtrl', vehicleModalCtrl);
 
-    vehicleModalCtrl.$inject = ['$scope', 'vehiclesFactory', 'toastr', '$timeout', '$filter','v_id','$state'];
+    vehicleModalCtrl.$inject = ['$scope', 'vehiclesFactory', 'makesFactory', 'modelsFactory', 'toastr', '$timeout', '$filter','v_id','$state'];
 
-    function vehicleModalCtrl($scope, vehiclesFactory, toastr, $timeout, $filter, v_id, $state) {
+    function vehicleModalCtrl($scope, vehiclesFactory, makesFactory, modelsFactory, toastr, $timeout, $filter, v_id, $state) {
         $scope.vehicle = {};
+        $scope.makes = {};
+        $scope.models = {};
 
         if (!_.isEmpty(v_id)) {
             vehiclesFactory.getVehicle(v_id).then(function (data) {
@@ -25,6 +27,17 @@
             });
         }
 
+        makesFactory.getAllMake().then(function (data) {
+            //console.log("data:" + data);
+            if (data.statusCode == 200 && data.response.success) {
+                var makes = data.response.result;
+                //console.dir(makes);
+                if (!_.isEmpty(makes)) {
+                    $scope.makes = makes;
+                }
+            }
+        });
+
         $scope.checkToggle = function(){
             if (!_.isEmpty(v_id)) {
                 return false;
@@ -32,6 +45,20 @@
                 return true;
             }
         };
+
+        $scope.changeModel = function (id) {
+            if(id != null){
+                modelsFactory.getModelByMake(id).then(function (data) {
+                    if (data.statusCode == 200 && data.response.success) {
+                        var models = data.response.result;
+                        //console.dir(models);
+                        if (!_.isEmpty(models)) {
+                            $scope.models = models;
+                        }
+                    }
+                });
+            }
+        }
 
         $scope.saveEntryV = function () {
             if (_.isEmpty(v_id)) {

@@ -10,7 +10,7 @@
                 </div>
                 <div class="col-xs-6 col-md-3">
                     <span class="strong">Vehicle:</span>
-                    <span>{{::vehicle.year}} {{::vehicle.make}} {{::vehicle.model}} {{::vehicle.plateno}}</span>
+                    <span>{{vehicle.year}} {{::vehicle.make}} {{::vehicle.model}} {{::vehicle.plateno}}</span>
                 </div>
                 <div class="col-xs-6 col-md-3">
                     <span class="strong">Assigned to:</span>
@@ -33,11 +33,17 @@
             </div>
             <div class="form-group col-md-6">
                 <label for="vMake">Make</label>
-                <input type="text" class="form-control" id="vMake" ng-model="vehicle.make">
+                <!-- <input type="text" class="form-control" id="vMake" ng-model="vehicle.make"> -->
+                <select ng-model="vehicle.make" class="form-control" ng-change="changeModel(vehicle.make)" ng-options="item.id as item.name for item in makes">
+                    <option value="">-- Select Make --</option>
+                </select>
             </div>
             <div class="form-group col-md-6">
                 <label for="vModel">Model</label>
-                <input type="text" class="form-control" id="vModel" ng-model="vehicle.model">
+                <!-- <input type="text" class="form-control" id="vModel" ng-model="vehicle.model"> -->
+                <select ng-model="vehicle.model" class="form-control" ng-options="item.id as item.name for item in models">
+                    <option value="">-- Select Make --</option>
+                </select>
             </div>
             <div class="form-group col-md-6">
                 <label for="vPlateno">Plate Number</label>

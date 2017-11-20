@@ -42,6 +42,13 @@
                     }, function(err){
                         return err.data;
                     });
+                },
+                getModelByMake: function(id){
+                    return Restangular.all('models/make/' + id).customGET().then(function(res){
+                        return res;
+                    }, function(err){
+                        return err.data;
+                    });
                 }
             }
         }
