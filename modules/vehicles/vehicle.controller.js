@@ -27,6 +27,22 @@
             });
         }
 
+        $scope.datepurchased = {
+            datepickerOptions: {
+                showWeeks: false,
+                startingDay: 1,
+                dateDisabled: function(data) {
+                    return (data.mode === 'day' && (new Date().toDateString() == data.date.toDateString()));
+                }
+            }
+        }
+        $scope.isOpen = false;
+        $scope.openCalendar = function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            $scope.isOpen = true;
+        };
+
         makesFactory.getAllMake().then(function (data) {
             //console.log("data:" + data);
             if (data.statusCode == 200 && data.response.success) {
@@ -51,7 +67,7 @@
                 modelsFactory.getModelByMake(id).then(function (data) {
                     if (data.statusCode == 200 && data.response.success) {
                         var models = data.response.result;
-                        //console.dir(models);
+                        console.dir(models);
                         if (!_.isEmpty(models)) {
                             $scope.models = models;
                         }

@@ -171,7 +171,13 @@
                     </div>
                     <div class="form-group col-md-3" >
                         <label for="vDatePurchased">Date Purchased</label>
-                        <input type="date" datetime="yyyy-MM-dd" class="form-control" id="vDatePurchased" ng-model="vehicle.datepurchased">
+                        <!-- <input type="date" datetime="yyyy-MM-dd" class="form-control" id="vDatePurchased" ng-model="vehicle.datepurchased"> -->
+                        <p class="input-group">
+                            <input type="text" class="form-control" datetime-picker="yyyy-MM-dd" ng-model="vehicle.datepurchased" datepicker-options="datepurchased.datepickerOptions" is-open="isOpen" ng-focus="openCalendar($event, prop)" />
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default" ng-click="openCalendar($event, prop)"><i class="fa fa-calendar"></i></button>
+                            </span>
+                        </p>
                     </div>
                     <div class="form-group col-md-3" >
                         <label for="vMileage">Mileage</label>
