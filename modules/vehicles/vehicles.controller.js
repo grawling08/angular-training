@@ -15,7 +15,7 @@
             //console.log("data:" + data);
             if (data.statusCode == 200 && data.response.success) {
                 var vehicles = data.response.result;
-                //console.log('vehicles: ' + vehicles);
+                console.dir(vehicles);
                 if (!_.isEmpty(vehicles)) {
                     $scope.vehicles = vehicles;
                     $scope.vehiclesCopy = angular.copy(vehicles);

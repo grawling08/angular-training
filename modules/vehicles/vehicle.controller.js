@@ -17,7 +17,7 @@
                     var vehicle = data.response.result;
                     if (vehicle) {
                         $scope.vehicle = vehicle;
-                        //console.log(new Date($scope.vehicle.datepurchased));
+                        console.dir(vehicle);
                         $scope.vehicle.datepurchased = new Date($scope.vehicle.datepurchased);
                     }
                 } else {
