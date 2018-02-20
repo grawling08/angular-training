@@ -17,7 +17,7 @@
             <label for="exampleInputPassword1">Departure</label>
             <!-- <input type="text" class="form-control" id="exampleInputPassword1" ng-model="travel.departure"> -->
             <p class="input-group">
-                <input type="text" class="form-control" datetime-picker="yyyy-MM-dd HH:mm" ng-model="travel.departure" datepicker-options="departure.datepickerOptions" is-open="isOpen" ng-focus="openCalendar($event, prop)" />
+                <input type="text" class="form-control" datetime-picker="yyyy-MM-dd HH:mm" enable-date="false" ng-model="travel.departure" datepicker-options="departure.datepickerOptions" is-open="isOpen" ng-focus="openCalendar($event, prop)" />
                 <span class="input-group-btn">
                     <button type="button" class="btn btn-default" ng-click="openCalendar($event, prop)"><i class="fa fa-calendar"></i></button>
                 </span>
